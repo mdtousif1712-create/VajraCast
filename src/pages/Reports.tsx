@@ -144,8 +144,8 @@ ${aiData?.explanation || "No summary available."}
     <div className="flex-1 p-6 overflow-y-auto custom-scroll relative">
       <div ref={reportRef} className="max-w-[1400px] mx-auto space-y-4">
         {/* Header Section */}
-        <div className="flex items-center justify-between glass-panel p-5 rounded-2xl border border-white/20 relative z-[100]">
-          <div>
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between glass-panel p-5 rounded-2xl border border-white/20 relative z-[100] gap-4">
+          <div className="w-full sm:w-auto">
             <h1 className="text-3xl font-serif text-black tracking-tight">
               AI Report
             </h1>
@@ -155,22 +155,22 @@ ${aiData?.explanation || "No summary available."}
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-4 mt-4 sm:mt-0 w-full sm:w-auto">
-            <div className="relative">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
+            <div className="relative w-full sm:w-auto">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-black/50" />
               <input
                 type="text"
                 readOnly
                 value={`${location.name}, ${location.state}`}
-                className="pl-9 pr-10 py-2.5 bg-white/60 border border-white/50 rounded-xl text-sm font-medium text-black placeholder:text-black/60 focus:outline-none focus:ring-2 focus:ring-black/10 w-64"
+                className="pl-9 pr-10 py-2.5 bg-white/60 border border-white/50 rounded-xl text-sm font-medium text-black placeholder:text-black/60 focus:outline-none focus:ring-2 focus:ring-black/10 w-full sm:w-64"
               />
             </div>
 
-            <div className="relative">
+            <div className="relative w-full sm:w-auto">
               <button
                 onClick={() => setDownloadOpen(!downloadOpen)}
                 disabled={isGenerating}
-                className="flex items-center gap-2 px-4 py-2.5 bg-white/60 hover:bg-white/80 border border-white/50 rounded-xl text-sm font-bold text-black transition-colors disabled:opacity-50"
+                className="flex items-center justify-center gap-2 px-4 py-2.5 bg-white/60 hover:bg-white/80 border border-white/50 rounded-xl text-sm font-bold text-black transition-colors disabled:opacity-50 w-full sm:w-auto"
               >
                 <Download className="w-4 h-4 text-black/80" />
                 {isGenerating ? "Generating..." : "Download Report"}
@@ -178,7 +178,7 @@ ${aiData?.explanation || "No summary available."}
               </button>
 
               {downloadOpen && (
-                <div className="absolute top-full right-0 mt-2 w-56 bg-[#f7f7f2] border border-black/10 rounded-xl p-1.5 shadow-xl z-[999]">
+                <div className="absolute top-full right-0 left-0 sm:left-auto mt-2 w-full sm:w-56 bg-[#f7f7f2] border border-black/10 rounded-xl p-1.5 shadow-xl z-[999]">
                   <button 
                     onClick={handleDownloadPDF}
                     className="flex items-center gap-3 w-full px-3 py-2 text-sm font-semibold text-black hover:bg-black/5 rounded-lg transition-colors"
