@@ -51,7 +51,9 @@ export function Reports() {
       const imgData = await htmlToImage.toJpeg(reportRef.current, {
         quality: 1,
         pixelRatio: 2,
-        backgroundColor: '#e6ebef'
+        backgroundColor: '#e6ebef',
+        cacheBust: true,
+        style: { transform: 'scale(1)', transformOrigin: 'top left' }
       });
       
       const pdf = new jsPDF('p', 'mm', 'a4');
@@ -64,6 +66,7 @@ export function Reports() {
       pdf.save(`VajraCast_Report_${location.name.replace(/\s+/g, '_')}.pdf`);
     } catch (err) {
       console.error("Error generating PDF:", err);
+      alert("Failed to generate PDF. Please try downloading as Markdown.");
     } finally {
       setIsGenerating(false);
     }
@@ -77,15 +80,20 @@ export function Reports() {
     try {
       const imgData = await htmlToImage.toPng(reportRef.current, {
         pixelRatio: 2,
-        backgroundColor: '#e6ebef'
+        backgroundColor: '#e6ebef',
+        cacheBust: true,
+        style: { transform: 'scale(1)', transformOrigin: 'top left' }
       });
       
       const link = document.createElement('a');
       link.download = `VajraCast_Report_${location.name.replace(/\s+/g, '_')}.png`;
       link.href = imgData;
+      document.body.appendChild(link);
       link.click();
+      document.body.removeChild(link);
     } catch (err) {
       console.error("Error generating Image:", err);
+      alert("Failed to generate Image. Please try downloading as Markdown.");
     } finally {
       setIsGenerating(false);
     }
@@ -117,13 +125,19 @@ ${aiData?.explanation || "No summary available."}
 - +6 hours: Low
 `;
     
-    const blob = new Blob([mdContent], { type: 'text/markdown' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.download = `VajraCast_Report_${location.name.replace(/\s+/g, '_')}.md`;
-    link.href = url;
-    link.click();
-    URL.revokeObjectURL(url);
+    try {
+      const blob = new Blob([mdContent], { type: 'text/markdown' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.download = `VajraCast_Report_${location.name.replace(/\s+/g, '_')}.md`;
+      link.href = url;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error("Error generating Markdown:", err);
+    }
   };
 
   return (

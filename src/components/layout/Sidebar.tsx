@@ -47,7 +47,7 @@ export function Sidebar() {
         </p>
       </div>
 
-      <nav className="flex-1 px-2 md:px-4 flex flex-row md:flex-col space-x-1 md:space-x-0 md:space-y-2 overflow-x-auto md:overflow-x-hidden md:mt-4 items-center md:items-stretch scrollbar-hide">
+      <nav className="flex-1 px-2 md:px-4 flex flex-row md:flex-col space-x-1 md:space-x-0 md:space-y-2 overflow-x-auto md:overflow-x-hidden md:mt-4 items-center md:items-stretch scrollbar-hide justify-around md:justify-start w-full">
         {navItems.map((item) => {
           const Icon = item.icon;
           return (
@@ -56,7 +56,7 @@ export function Sidebar() {
               to={item.path}
               className={({ isActive }) =>
                 cn(
-                  "flex items-center justify-center md:justify-start gap-4 p-2 md:px-3 md:py-3 rounded-lg text-sm font-medium transition-colors relative whitespace-nowrap min-w-[3rem] md:min-w-0",
+                  "flex items-center justify-center md:justify-start gap-4 p-2 md:px-3 md:py-3 rounded-lg text-sm font-medium transition-colors relative whitespace-nowrap md:min-w-0 flex-1 md:flex-none",
                   isActive
                     ? "bg-sage/20 text-black"
                     : "text-black/80 hover:bg-surface-muted hover:text-black",

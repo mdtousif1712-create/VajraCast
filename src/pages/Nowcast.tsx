@@ -69,11 +69,11 @@ export function Nowcast() {
 
 
   return (
-    <div className="flex flex-col h-full text-[#2c3e50] overflow-hidden w-full relative z-50 rounded-2xl">
+    <div className="flex flex-col h-full text-[#2c3e50] overflow-y-auto lg:overflow-hidden w-full relative z-50 rounded-2xl">
       {/* Main Content */}
       <div className="flex-1 flex flex-col lg:flex-row p-4 gap-4 min-h-0">
         {/* Map Area */}
-        <div className="flex-1 relative rounded-2xl overflow-hidden bg-[#e2e8f0] border border-black/5 shadow-sm flex">
+        <div className="min-h-[400px] lg:min-h-0 flex-1 relative rounded-2xl overflow-hidden bg-[#e2e8f0] border border-black/5 shadow-sm flex shrink-0 lg:shrink">
           <Map
             initialViewState={{
               longitude: location.coordinates.lng,

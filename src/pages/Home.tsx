@@ -57,9 +57,9 @@ export function Home() {
   return (
     <div className="w-full h-full min-h-full text-slate-100 font-['Plus_Jakarta_Sans']">
       
-<main className="w-full h-full min-h-full relative overflow-hidden flex p-4 md:p-7 gap-7 selection:bg-emerald-600 selection:text-white" data-purpose="weather-dashboard">
+<main className="w-full h-full min-h-full relative overflow-y-auto overflow-x-hidden md:overflow-hidden flex flex-col md:flex-row p-4 md:p-7 gap-4 md:gap-7 selection:bg-emerald-600 selection:text-white" data-purpose="weather-dashboard">
 
-<aside className="w-[285px] h-full flex flex-col justify-between shrink-0 glass-card rounded-[30px] p-5 relative z-20" data-purpose="sidebar-controls">
+<aside className="w-full md:w-[285px] h-auto md:h-full flex flex-col justify-between shrink-0 glass-card rounded-[30px] p-5 relative z-20" data-purpose="sidebar-controls">
 
 <div className="flex flex-col items-center pt-2">
 <h1 className="text-3xl font-medium tracking-tight text-white flex items-center gap-2">
@@ -122,9 +122,9 @@ export function Home() {
 </aside>
 
 
-<div className="flex-1 flex flex-col justify-between pl-3 pr-1 py-1 relative z-10" data-purpose="weather-main-view">
+<div className="flex-1 flex flex-col justify-between pl-1 md:pl-3 pr-1 py-1 relative z-10 min-w-0" data-purpose="weather-main-view">
 
-<div className="flex justify-between items-start">
+<div className="flex flex-col md:flex-row justify-between items-start">
 
 <div className="flex flex-col">
 
@@ -154,7 +154,7 @@ export function Home() {
 </div>
 </div>
 
-<div className="w-[370px] flex flex-col items-end">
+<div className="w-full md:w-[370px] mt-6 md:mt-0 flex flex-col md:items-end">
 
 
 

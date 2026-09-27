@@ -60,7 +60,7 @@ export function Storms() {
   return (
     <div className="flex flex-col flex-1 h-full min-h-0 overflow-y-auto p-6 space-y-6 text-black relative z-10">
       {/*  BEGIN: Desktop Application Window  */}
-      <div className="relative w-full max-w-[1440px] h-auto min-h-[900px] lg:h-[900px] rounded-3xl storm-atmosphere border border-white/30/[0.08] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] overflow-hidden flex flex-col justify-between p-4 md:p-8">
+      <div className="relative w-full max-w-[1440px] h-auto md:min-h-[900px] lg:h-[900px] rounded-3xl storm-atmosphere border border-white/30/[0.08] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] overflow-hidden flex flex-col justify-between p-4 md:p-8">
         {/*  Atmospheric Layer Overlays  */}
         <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/[0.03] via-transparent to-black/40"></div>
         <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-red-600/10 rounded-full blur-3xl pointer-events-none"></div>

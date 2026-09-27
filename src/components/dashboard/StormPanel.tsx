@@ -30,7 +30,7 @@ export function StormPanel({ stormId, onClose }: StormPanelProps) {
   ];
 
   return (
-    <div className="absolute top-4 right-4 w-[340px] glass-panel shadow-lg flex flex-col z-10 max-h-[calc(100%-6rem)] overflow-auto animate-in slide-in-from-right-4">
+    <div className="absolute top-4 left-4 right-4 md:left-auto md:w-[340px] glass-panel shadow-lg flex flex-col z-10 max-h-[calc(100%-6rem)] overflow-y-auto animate-in slide-in-from-right-4">
       <div className="p-4 border-b border-border flex items-center justify-between sticky top-0 bg-surface/80 backdrop-blur-md z-20">
         <div>
           <h3 className="font-mono text-[10px] text-white uppercase tracking-widest font-semibold">

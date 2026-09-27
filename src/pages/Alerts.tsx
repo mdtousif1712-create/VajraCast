@@ -17,7 +17,7 @@ export function Alerts() {
     <div className="flex flex-col flex-1 h-full min-h-0 overflow-y-auto p-6 space-y-6 text-black relative z-10">
       {/*  BEGIN: Master Application Canvas (1440x900 aspect desktop frame)  */}
       <main
-        className="master-atmosphere w-full max-w-[1440px] min-h-[900px] rounded-3xl relative p-6 sm:p-8 lg:p-10 flex flex-col justify-between overflow-hidden"
+        className="master-atmosphere w-full max-w-[1440px] md:min-h-[900px] rounded-3xl relative p-6 sm:p-8 lg:p-10 flex flex-col justify-between overflow-hidden"
         data-purpose="master-workspace"
       >
         {/*  BEGIN: Top Bar Section  */}

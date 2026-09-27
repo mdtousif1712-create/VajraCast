@@ -23,7 +23,7 @@ export function Dashboard() {
   };
 
   return (
-    <div className="flex flex-col flex-1 h-full min-h-0 p-6">
+    <div className="flex flex-col flex-1 h-full min-h-0 p-4 md:p-6 overflow-y-auto custom-scroll">
       <div className="mb-3 shrink-0 flex items-center justify-between">
         <div>
           <h1 className="font-serif text-2xl tracking-tight text-black mb-0.5">
@@ -38,7 +38,7 @@ export function Dashboard() {
 
       <KPIStrip />
 
-      <div className="flex-1 relative rounded-2xl overflow-hidden border border-white/50 shadow-lg bg-white/20 backdrop-blur-md">
+      <div className="flex-1 relative rounded-2xl overflow-hidden border border-white/50 shadow-lg bg-white/20 backdrop-blur-md min-h-[500px] md:min-h-0">
         <WeatherMap
           onLocationClick={handleLocationClick}
           onStormClick={handleStormClick}
