@@ -1,6 +1,7 @@
 import React from "react";
 import { Sidebar } from "./Sidebar";
 import { TopBar } from "./TopBar";
+import { VajraAIBot } from "../ui/vajra-ai-bot";
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   return (
@@ -12,6 +13,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           {children}
         </main>
       </div>
+      <VajraAIBot />
     </div>
   );
 }
